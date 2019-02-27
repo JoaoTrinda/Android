@@ -10,7 +10,7 @@
     <ListView
         android:id="@+id/listaContatos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="200dp" />
 
     <Button
         android:id="@+id/novoContatoButton"
@@ -25,5 +25,25 @@
         android:elevation="20dp"
         android:background="@drawable/floating_buttom"
         android:text="+" />
+
+    <Button
+        android:id="@+id/buscarContatoButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="137dp"
+        android:text="Button" />
+
+    <EditText
+        android:id="@+id/buscarContatoEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buscarContatoButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="55dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Buscaar..." />
 
 </RelativeLayout>

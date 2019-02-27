@@ -23,13 +23,9 @@ public class EnderecoEntity {
         this.id = id;
     }
 
-    public String getRua() {
-        return rua;
-    }
+    public String getRua() { return rua; }
 
-    public void setRua(String rua) {
-        this.rua = rua;
-    }
+    public void setRua(String rua) { this.rua = rua; }
 
     public String getNumero() {
         return numero;
