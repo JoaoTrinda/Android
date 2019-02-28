@@ -65,24 +65,24 @@ public class ContatoActivity extends AppCompatActivity {
 
                 if(contato != null){
                     contato.setNome(nomeEditText.getText().toString());
-                    telefoneEditText.getText().toString();
-                    Double.valueOf(pontuacaoRatingBar.getProgress());
+                   contato.setTelefone(telefoneEditText.getText().toString());
+                   contato.setPontuacao(Double.valueOf(pontuacaoRatingBar.getProgress()));
 
-                }else{
-                     contato = new ContatoEntity(nomeEditText.getText().toString(),
+                }else {
+                    contato = new ContatoEntity(nomeEditText.getText().toString(),
                             telefoneEditText.getText().toString(),
                             Double.valueOf(pontuacaoRatingBar.getProgress()));
-
+                }
                     EnderecoEntity endereco = new EnderecoEntity(cidadeEditText.getText().toString(),
                             ruaEditText.getText().toString(),
                             numeroEditText.getText().toString());
-                }
+
 
                 ContatoDAO contatoDAO = new ContatoDAO(ContatoActivity.this);
                 contatoDAO.salvar(contato);
 
                 EnderecoDAO enderecoDAO = new EnderecoDAO(ContatoActivity.this);
-                enderecoDAO.salvar(Endereco);
+                enderecoDAO.salvar(endereco);
 
                 Toast.makeText(ContatoActivity.this, "Contato Salvo!", Toast.LENGTH_LONG
                 ).show();

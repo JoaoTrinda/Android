@@ -8,7 +8,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     private static final String DB_NAME = "agenda.senac.db";
 
-    private static final Integer DB_VERSION = 3;
+    private static final Integer DB_VERSION = 4;
 
     private final String DB_CREATE = "CREATE TABLE CONTATO(" +
             "ID INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -34,7 +34,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        if (oldVersion <= 3) {
+        if (oldVersion <= 4) {
             db.execSQL(DB_ENDERECO);
         }
     }

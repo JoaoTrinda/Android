@@ -28,8 +28,11 @@ public class ContatoDAO {
         values.put("TELEFONE", contato.getTelefone());
         values.put("PONTUACAO", contato.getPontuacao());
 
-        sqLiteDatabase.insert("CONTATO",null ,values);
-
+        if(contato.getId() != null){
+            sqLiteDatabase.update("CONTATO", values,"ID=?", new String[]{contato.getId().toString()});
+        }else {
+            sqLiteDatabase.insert("CONTATO", null, values);
+        }
         sqLiteDatabase.close();
     }
 
@@ -56,7 +59,7 @@ public class ContatoDAO {
     public List<ContatoEntity> listarPorNome (String nome){
         sqLiteDatabase = sqliteHelper.getReadableDatabase();
 
-        String sql = "SELECT * FROM CONTATO;";
+        String sql = "SELECT * FROM CONTATO WHERE NOME LIKE'%"+ nome + "%';";
 
         Cursor c = sqLiteDatabase.rawQuery(sql, null);
 
